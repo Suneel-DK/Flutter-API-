@@ -1,8 +1,13 @@
-import 'package:api_trial/Services/services.dart';
+
+import 'package:api_trial/yt/screen/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,27 +18,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("API RESPONSE"),
-      ),
-      body: FutureBuilder(
-          future: getEmployee(),
-          builder: (context, response) {
-            return Center(
-              child: Text(
-                  response.data ?? "Load agudhu pa kanna wait panu porumaya"),
-            );
-          }),
     );
   }
 }
